@@ -1,20 +1,20 @@
 <template>
-    <h3>Eliminar</h3>
-    <div class="container">
+   
+  
+  
+  <div class="container">
+    <div class="contenido">
+        <h3>Eliminar</h3>
+   
     <label for="id">Ingresa id</label>
   <input type="text" id="id" v-model="id">
-  <button @click="eliminarLibro">Eliminar</button>
-  
-  
-  
-  <label for="">Nombre</label>
-    <input v-model ="nombre" name="" id="">
-     <label for="">Apellido</label>
-    <input v-model ="apellido" name="" id="">
-    <label for="">Provincia</label>
-    <input v-model ="provincia" name="" id="">
+  <button @click="eliminarLibro">Eliminar</button>  
+
+    </div>
   </div>
-  
+  <div v-if="msj" class="alert alert-primary" role="alert">
+    {{mensaje}}
+</div>
   </template>
   
   <script>
@@ -24,20 +24,17 @@
   data(){
       return{
           id:null,
-          cedula:null,
-              
-              apellido:null,
-              nombre:null,
-              provincia:null,
+          
+      msj:false,
+            mensaje:null
       }
   },
   methods:{
-      async eliminarLibro(){
-         const estu=  await   eliminarLibroFachada(this.id)
-         this.apellido=estu.apellido
-         this.cedula=estu.cedula
-         this.nombre=estu.nombre
-         this.provincia=estu.provincia
+       eliminarLibro(){
+         eliminarLibroFachada(this.id)
+         this.msj=true
+            this.mensaje='Libro eliminado correctamente'
+         
       }
   }
   }

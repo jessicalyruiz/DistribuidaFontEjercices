@@ -32,8 +32,8 @@ export const actualizarLibroFachada = (bodyLibro, id) => {
 
 
 
-const IngresarLibro=async(bodyLibro)=>{
-    axios.post('http://localhost:8081/API/v1.0/Supermaxi/libros', bodyLibro,{headers:header}).then(r=>r.data);
+const IngresarLibro=(bodyLibro)=>{
+    axios.post('http://localhost:8081/books', bodyLibro).then(r=>r.data);
 }
 
 
@@ -44,9 +44,9 @@ const mostrarTodos=async()=>{
 
 
 const obtenerLibroAPI = async (id) => {
-  //en el config vamos a enviar todos los dartos de cabecera
+  
 
-  const data = axios.get(`http://localhost:8082/API/v1.0/Matricula/libros/${id}`,{headers:headers}).then(r => r.data)
+  const data = await axios.get(`http://localhost:8081/books/${id}`).then(r => r.data)
   console.log(data)
   return data
 }
@@ -56,13 +56,13 @@ const obtenerLibroAPI = async (id) => {
 const actualizarLibro = (bodyLibro, id) => {
 
  
-    axios.put(`http://localhost:8082/API/v1.0/Matricula/libros/${id}`, bodyLibro, {headers:headers}).then(r => r.data)
+    axios.put(`http://localhost:8081/books/${id}`, bodyLibro, {headers:header}).then(r => r.data)
   
   }
   
   const eliminarLibro = (id) => {
    
-   return  axios.delete(`http://localhost:8082/API/v1.0/Matricula/libros/${id}`, {headers:headers}).then(r => r.data)
+   return  axios.delete(`http://localhost:8081/books/${id}`, {headers:header}).then(r => r.data)
   
   }
 

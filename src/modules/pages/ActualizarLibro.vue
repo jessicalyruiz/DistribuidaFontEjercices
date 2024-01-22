@@ -1,6 +1,8 @@
 <template>
     <h2>Actualizar</h2>
+    
     <DatosActualizar/>
+ 
     </template>
     
     <script>

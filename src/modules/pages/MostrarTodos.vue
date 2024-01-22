@@ -1,7 +1,7 @@
 <template>
-  <h1>Lista de Estudiantes</h1>
+  <h1>Lista de Libros</h1>
   
-  <div class="card" v-for="v in listaLibros" :key="v.id">
+  <div class="card" >
         
         <div class="card-body">
             <table class="table table-dark">
@@ -14,7 +14,7 @@
                     
                 </tr>
             </thead>
-            <tbody>
+            <tbody v-for="v in listaLibros" :key="v.id">
                 <tr>
                     <td>{{ v.isbn }}</td>
                     <td>{{ v.title }}</td>
