@@ -46,6 +46,41 @@ const routes = [
     name: 'eliminar',
     component: ()=>import('../modules/pages/EliminarLibro.vue')
   },
+
+
+
+  {
+    path: '/personas',
+    name: 'personas',
+    component: ()=>import('../modules/pages/Personas.vue')
+  }
+  ,{
+    path: '/personasAll',
+    name: 'personasAll',
+    component: ()=>import('../modules/pages/MostrarTodos.vue')
+  },
+  {
+    path: '/actualizarP',
+    name: 'actualizarP',
+    component: ()=>import('../modules/pages/ActualizarPersona.vue')
+  },
+  {
+    path: '/consultarP/:id',
+    name: 'consultarP',
+    component: ()=>import('../modules/pages/BuscarPersona.vue')
+  }
+  ,
+  {
+    path: '/guardarP',
+    name: 'guardarP',
+    component: ()=>import('../modules/pages/IngresarPersona.vue')
+  }
+  ,
+  {
+    path: '/eliminarP',
+    name: 'eliminarP',
+    component: ()=>import('../modules/pages/EliminarPersona.vue')
+  },
 ]
 
 const router = createRouter({
